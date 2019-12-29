@@ -19,11 +19,6 @@ All this project has been developed with Open Source Software. I have used the .
 - MySQL Server
 - Newtonsoft.Json
 
-# Server URLs
-This URLs are very important to access to the API and to access to the Web presentation and administration portal.
-- [Process Guard API](http://ec2-34-212-22-27.us-west-2.compute.amazonaws.com/api/processitems)
-- [Process Guard Presentation and Admin Web](http://ec2-52-33-111-26.us-west-2.compute.amazonaws.com/)
-
 # Contact
 If you have any question, please dont forget to contact me on Twitter. This project will be soon on GitHub, to contribute and help to the community and other people with doubts. Thanks for everything.
 
