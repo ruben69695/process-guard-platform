@@ -1,5 +1,5 @@
 # Introduction
-This is a little project made by an excercice from EDUCEM in ASIX2x3, the objective is control the processes of the student or the worker and increase the productivity, also help to have always at hand the most important tools and software in Windows Operating Systems. It can be also a good tool to make life easier to teachers and IT Administrators. It could be an extra complement to a proxy in the OS part.
+This is a little project made to EDUCEM in ASIX2x3, the objective is control the processes of the student or the worker and increase the productivity, also help to have always at hand the most important tools and software in Windows Operating Systems. It can be also a good tool to make life easier to teachers and IT Administrators. It could be an extra complement to a proxy in the OS part.
 
 # Getting Started
 The projects was necesarry to develop it in 3 parts, but I developed in 4 parts to make it strong and more complete.
