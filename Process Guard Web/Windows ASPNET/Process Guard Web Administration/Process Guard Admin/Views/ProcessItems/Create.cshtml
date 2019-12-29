@@ -1,0 +1,49 @@
+﻿@model Process_Guard_Admin.Models.EditProcess
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Process Item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label" asp-for="process.Exe"></label>
+                <input class="form-control" asp-for="process.Exe" />
+                <span asp-validation-for="process.Exe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="process.Filename"></label>
+                <input class="form-control" asp-for="process.Filename" />
+                <span asp-validation-for="process.Filename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="process.Description"></label>
+                <input class="form-control" asp-for="process.Description" />
+                <span asp-validation-for="process.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="process.Color"></label>
+                <select class="form-control" asp-for="process.Color" asp-items="@(new SelectList(Model.colors, "Name", "Name"))"></select>
+            </div> 
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

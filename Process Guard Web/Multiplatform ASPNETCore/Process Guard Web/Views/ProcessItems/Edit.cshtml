@@ -1,0 +1,49 @@
+﻿@model Process_Guard_Web.Models.EditProcess
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Process: "@Model.process.Exe"</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="process.Exe" class="control-label"></label>
+                <input asp-for="process.Exe" class="form-control" />
+                <span asp-validation-for="process.Exe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="process.Filename" class="control-label"></label>
+                <input asp-for="process.Filename" class="form-control" />
+                <span asp-validation-for="process.Filename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="process.Description" class="control-label"></label>
+                <input asp-for="process.Description" class="form-control" />
+                <span asp-validation-for="process.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="process.Color" class="control-label"></label>
+                <select asp-for="process.Color" asp-items="@(new SelectList(Model.colors, "Name","Name"))"  class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" asp-route-exe="@Model.process.Exe" asp-route-filename="@Model.process.Filename"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

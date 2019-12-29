@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Process_Guard_Web.Models.ProcessList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+    <div class="row">
+        <div class="col-md-4">
+            <label class="control-label"> Exe Filter: </label>
+            <form asp-controller="ProcessItems" asp-action="Index" method="post" class="form-inline">
+                <input name="searchString" type="text" class="form-control" />
+                <input type="submit" value="Filter" class="btn btn-default form-group" />
+            </form>
+        </div>
+    </div>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.Exe) </th>
+            <th> @Html.DisplayNameFor(model => model.Filename)</th>
+            <th> @Html.DisplayNameFor(model => model.Description)</th>
+            <th> @Html.DisplayNameFor(model => model.Color)</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => item.Exe)</td>
+                <td>@Html.DisplayFor(model => item.Filename)</td>
+                <td>@Html.DisplayFor(model => item.Description)</td>
+                <td>@Html.DisplayFor(model => item.Color)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-exe="@item.Exe" asp-route-xfilename="@item.Filename">Edit</a> |
+                    <a asp-action="Details" asp-route-Exe="@item.Exe" asp-route-Filename="@item.Filename">Details</a> |
+                    <a asp-action="Delete" asp-route-Exe="@item.Exe" asp-route-Filename="@item.Filename">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
